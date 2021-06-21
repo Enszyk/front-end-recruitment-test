@@ -76,4 +76,54 @@
   }
 
   // Your custom JavaScript goes here
+
+  const baconButton = document.querySelector('#overview button');
+  const baconImage = document.querySelector('#overview img');
+  const baconImageWrapper = baconImage.parentNode
+ 
+  baconImageWrapper.style.position = "relative"
+   
+  let counter = 0
+ 
+  baconButton.addEventListener('click', () => {
+ 
+    // If counter was displayed remove it from dom
+    if (document.querySelector('.counter'))
+      baconImageWrapper.removeChild(document.querySelector('.counter'))
+ 
+    const clonedBaconImage = baconImage.cloneNode(true);
+ 
+    // Calculate distortion
+    const distortionRange = baconImage.clientWidth / 3;  
+    const sizeChange = randomIntFromRange(50, 105) + "%"
+    const xShift = randomIntFromRange(-distortionRange, distortionRange) + "px"
+    const yShift = randomIntFromRange(-distortionRange, distortionRange) + "px"
+ 
+ 
+    clonedBaconImage.style.position = "absolute"
+    clonedBaconImage.style.width = sizeChange
+    clonedBaconImage.style.height = sizeChange
+    clonedBaconImage.style.bottom = yShift
+    clonedBaconImage.style.right = xShift
+ 
+    // Create counter and add some styling
+    const counterElem = document.createElement('div')
+ 
+    counter += 1;
+    counterElem.innerHTML = counter
+    counterElem.style.fontSize = "7rem"
+    counterElem.style.zIndex= "99999"
+    counterElem.className="counter"
+    counterElem.style.position="absolute"
+    counterElem.style.color="black"
+    counterElem.style.top= baconImage.clientWidth/3 + 'px'
+    counterElem.style.left= baconImage.clientWidth/2 + 'px'
+ 
+    baconImageWrapper.appendChild(clonedBaconImage);
+    baconImageWrapper.appendChild(counterElem);
+  });
+ 
+  const randomIntFromRange = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 })();
