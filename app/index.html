@@ -228,6 +228,114 @@
             </div>
           </section>
         </div>
+
+        <!-- FORM -->
+        <div class="mdl-layout__tab-panel is-active wrapper" id="form">
+          <form class="form">
+            <div class="form__group symbol symbol-one">
+              <h4 class="form__header">
+                Personal Information
+              </h4>
+              <div class="form__divide">
+                <div class="form__grid">
+                  <div class="form__section">
+                    <label for="first_name">First name</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="Elon" onfocusout="validate('firstName')">
+                  </div>
+                  <div class="form__section">
+                    <label for="last_name">Last name</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Musk" onfocusout="validate('lastName')">
+                  </div>
+                  <div class="form__section form__section-wide">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="elon@spacex.com" onfocusout="validate('email')">
+                  </div>
+                  <div class="form__section">
+                    <label for="country">Country</label>
+                    <select name="country" id="country" onfocusout="validate('country')">
+                      <option selected disabled>Choose country</option> 
+                      <option value="USA">United States</option>
+                      <option value="PL">Poland</option>
+                      <option value="CA">Canada</option>
+                    </select>
+                  </div>
+                  <div class="form__section">
+                    <label for="postal-code">Postal code</label>
+                    <input type="text" name="postal-code" id="postal-code" placeholder="10001" onfocusout="validate('postalCode')" maxlength="6">
+                  </div>
+                  <div class="form__section form__section-wide">
+                    <label for="phone-number">Phone number</label>
+                    <input type="tel" name="phone-number" id="phone-number" placeholder="(212) 692-93-92" onfocusout="validate('phoneNumber')">
+                  </div>
+                </div>
+                <div class="summary">
+                  <div class="summary__wrapper">
+                    <div class="summary__header">
+                      Your order
+                    </div>
+                    <div class="summary__group">
+                      <div class="summary__row">
+                        <div>Apple Watch Sport</div>
+                        <div>$ 580</div>
+                      </div>
+                      <div class="summary__row">
+                        <div>Modern Buckle</div>
+                        <div>$ 380</div>
+                      </div>
+                    </div>
+                    <div class="summary__group summary__group-border">
+                      <div class="summary__row">
+                        <div>Total purchases</div>
+                        <div>$ 960.00</div>
+                      </div>
+                      <div class="summary__row">
+                        <div>Estimated tax</div>
+                        <div>$ 0</div>
+                      </div>
+                    </div>
+                    <div class="summary__group">
+                      <div class="summary__row">
+                        <div>Total</div>
+                        <div class="summary__price-enlarge">$ 960</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__group symbol symbol-two">
+              <h4 class="form__header">
+                Payments details
+                <img src="./images/padlock.png">
+              </h4>
+              <div class="form__divide">
+                <div class="form__grid">
+                  <div class="form__section form__section-wide">
+                    <label for="credit-card-number">Credit Card Number</label>
+                    <img src="./images/visa.png" class="form__visa">
+                    <input type="text" name="credit-card-number" id="credit-card-number" 
+                      placeholder="0000-0000-0000-0000" onfocusout="validate('creditCard')">
+                  </div>
+                  <div class="form__section">
+                    <label for="security-code">Security code</label>
+                    <img src="./images/questionMark.png" class="form__hint">
+                    <input type="text" name="security-code" id="security-code" placeholder="***" onfocusout="validate('securityCode')" maxlength="3">
+                    <span class="tooltip">That 3 digits from the back of your credit card</span>
+                  </div>
+                  <div class="form__section">
+                    <label for="expiration date">Expiration date</label>
+                    <input type="text" name="expiration date" id="expiration-date" placeholder="MM/YY" onfocusout="validate('expirationDate')" maxlength="5">
+                  </div>
+                  <div class="form__section-wide">
+                    <button type="submit" class="form__button" id="form-button"><img src="./images/ShoppingCart.png"> Complete purchase</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- /FORM -->
+
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
